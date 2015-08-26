@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Jeff Maxim{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <table>
+        <th valign="bottom" height="150px"><h1>Hi! I'm Jeff Maxim</h1></th>
+        <th valign="bottom" text-align="right" height="150px"><img src="{{ url_for('static', filename='img/jeff.jpg') }}"></th>
+    </table>
+</div>
+
+<div class="container" id="bio-and-pic">
+    <div id="bio">
+            <h3>About Me</h3>
+            <p>I'm a freelance web developer, and <a href="http://www.recurse.com" target="-blank">Recurse Center</a> alum. I'm Director of Technology at <a href="http://www.inwoodacademy.org" target="_blank">Inwood Academy for Leadership Charter School</a>. I've also taught for nine years in K-12 schools.<p>
+            <h3>Big Things I've Made</h3>
+            <ul>
+                <li><a href="http://ec2-52-20-212-59.compute-1.amazonaws.com/chess/36">Crispy Hippopotamus</a>: A browser based graphical user interface for xboard compatible chess engines, such as gnuchess. Let's you play against some of the world's best chess engines in your browser. <a href="https://github.com/jeffthemaximum/crispy-hippopotamus" target="_blank">Source code here.</li>
+                <li><a href="http://fast-woodland-8984.herokuapp.com/">Jeffit</a>: A Reddit clone written in Ruby on Rails that I used in my 6th grade Social Studies classroom. Students posted projects to Jeffit, then voted/comments on others' work. <a href="https://github.com/jeffthemaximum/Jeffit" target="_blank">Source code here.</li>
+            </ul>
+            <h3>Medium projects</h3>
+            <ul>
+                <li><a href="http://www.jeffpd.com">Jeff PD</a>: Website that I use to coach teachers at <a href="http://www.inwoodacademy.org" target="_blank">Inwood Academy</a> how to use EdTech in their classrooms. Will soon be a big thing once a few super-secret new features are completed. <a href="https://github.com/jeffthemaximum/jeffPD" target="_blank">Source code here.</li>
+                <li><a href="http://jeffweather.herokuapp.com/">Jeff Weather</a>: A Flask web app that forecasts local seven day weather. Also provides local radar. <a href="https://github.com/jeffthemaximum/weather-app" target="_blank">Source code here.</li>
+                <li><a href="http://tinyjeff.herokuapp.com/">Tiny Jeff</a>: A URL shortner, bitly clone written in python and using Flask. <a href="https://github.com/jeffthemaximum/flask-url-shortener" target="_blank">Source code here.</li>
+            </ul>
+            <h3>Blogs and littler projects</h3>
+            <ul>
+                <li><a href="https://obscure-atoll-2224.herokuapp.com/">Recurse Center Blog</a>: A Ruby on Rails blog that documents my learning and experiences at Recurse Center. <a href="https://github.com/jeffthemaximum/octropress-blog" target="_blank">Source code here.</li>
+                <li><a href="http://www.jeffreymaxim.com">Educational Technology Blog</a>: WordPress blog where I write about current issues in EdTech.</li>
+                <li><a href="http://www.mrmaxim.org">5th/6th Grade Class Website</a>: Google Site that I used to communicate curriculum to students, teachers, and administrators while working as a public school teacher in NYC.</li>
+            </ul>
+    </div>
+</div>
+
+{% endblock %}
