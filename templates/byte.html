@@ -1,0 +1,117 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Byte Academy{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/boot.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table>
+        <th valign="bottom" height="150px"><h1>Hi! I'm Jeff Maxim</h1></th>
+        <th valign="bottom" text-align="right" height="150px"><img src="{{ url_for('static', filename='img/jeff.jpg') }}"></th>
+    </table>
+    <br>
+    <p>I'm a freelance web developer, and <a href="http://www.recurse.com" target="-blank">Recurse Center</a> alum. I'm Director of Technology at <a href="http://www.inwoodacademy.org" target="_blank">Inwood Academy for Leadership Charter School</a>. I've also taught for nine years in K-12 schools, and currently teach <a href="http://cs50.wiki/This+is+CS50+AP" target="_blank">CS50AP</a> to NYC high school students. Checkout some stuff I've made in <a href="http://jeffmaxim.herokuapp.com" target="_blank">my portfolio</a>.<p>
+</div>
+<div class="container">
+    {% block page_content %}
+        <h3>tl;dr of today's lesson</h3>
+        <p><b>What we're going to do: </b>Our goal for today is to write our own versions of Python List methods like .append(), .extend(), .insert(), and .reverse(). We'll start with a quick review of Python Lists and what they do. Then, we'll review each of the four List methods I mentioned previously. Then, your challenge for today is to chose one of those four functions and write your own version of that function!</p>
+        <p><b>Why we're going to go it: </b>"Dig deep" is an approach to learning programming that encourages the learner to understand the intracate details of how a programming language, idea, method, etc. works. (I learned about it from <a href="http://maryrosecook.com/" target="_blank">Mary Rose Cook</a>). Understanding the deep details of a concept makes you better at remembering that concept and using it in the future.</b></p>
+        <p>Table of contents:</p>
+        <ul>
+            <li>Review of Python Lists</li>
+            <ul>
+                <li><a href="#lesson1">
+                    How to create a List and access items within the List.
+                </a></li>
+                <li><a href="#lesson2">
+                    How Python List methods like .append(), .extend(), .insert(), and .reverse() work.
+                </a></li>
+            </ul>
+            <li>Your challenge for today</li>
+            <ul>
+                <li><p style="color:red">SKIP RIGHT HERE IF YOU JUST WANT TO GET STARTED ON THE CHALLENGE ---> <a href="#lesson3">
+                    Creating your own Python List methods can help you to "dig deep" into how these methods work.
+                </a></p></li>
+            </ul>
+        </ul>
+        <h3 id="lesson1">Create a Python List</h3>
+        <p>You just need to provide name of the list and initialize it with values.Following is an example of a List in Python:</p>
+        <pre><code>
+>>> myList = ["The", "earth", "revolves", "around", "sun"]
+>>> myList
+["The", "earth", "revolves", "around", "sun"]
+        </code></pre>
+        <br>
+        <h3>Accessing items in a List</h3>
+        <p>Lists in python are zero indexed. This means, you can access individual elements in a list just as you would do in an array. Here is an example:</p>
+        <pre><code>
+>>> myList[0]
+'The'
+>>> myList[4]
+'sun'
+        </code></pre>
+        <p>Lists cannot be accessed beyond the rightmost index boundary. Here is an example:</p>
+        <pre><code>
+>>> myList[5]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+        </code></pre>
+        <p>If you try to access value at a negative index then values from the rightmost index can be accessed backwards. Here is an example:</p>
+        <pre><code>
+>>> myList[-1]
+'sun'
+        </code></pre>
+        <p>The above sections, "Create a Python List", and "Accessing items in a list" borrow heavily from <a href="http://www.thegeekstuff.com/2013/06/python-list/" target="_blank">http://www.thegeekstuff.com/2013/06/python-list/</a>.
+        <br>
+        <h3 id="lesson2">List methods</h3>
+        <p>Below is a list of some of the methods that Python includes for lists</p>
+        <h5>list.append(obj)</h5>
+        <p>The method <b>append()</b> appends a passed obj into the existing list. Here is an example:</p>
+        <pre><code>
+>>> myList.append("today")
+["The", "earth", "revolves", "around", "sun", "today"]
+>>> myList.append(["because", "of", "gravity"])
+["The", "earth", "revolves", "around", "sun", "today", ["because", "of", "gravity"]]
+        </code></pre>
+        <h5>list.extend(seq)</h5>
+        <p>The method <b>extend()</b> appends the contents of seq to list. Here is an example:</p>
+        <pre><code>
+>>> myList = ["The", "earth", "revolves", "around", "sun"]
+>>> myList.extend(["today", "because", "of", "gravity"])
+["The", "earth", "revolves", "around", "sun", "today", "because", "of", "gravity"]
+        </code></pre>
+        <p>*Bonus thought question #1: Why did I have to reinitialize myList to equalling ["The", "earth", "revolves", "around", "sun"] ?</p>
+        <h5>list.insert(index, obj)</h5>
+        <p>The method <b>insert()</b> inserts object obj into list at offset index.</p>
+        <pre><code>
+>>> myList = ["The", "earth", "revolves", "around", "sun"]
+>>> myList.insert(4, myList)
+["The", "earth", "revolves", "around", "the", "sun"]
+        </code></pre>
+        <h5>list.reverse()</h5>
+        <p>The method <b>reverse()</b> reverses objects of list in place.</p>
+        <pre><code>
+>>> myList = ["The", "earth", "revolves", "around", "sun"]
+>>> myList.reverse()
+["sun", "around", "revolves", "earth", "The"]
+        </code></pre>
+        <p>The above section, "List methods", borrows from <a href="http://www.tutorialspoint.com/python/python_lists.htm" target="_blank">http://www.tutorialspoint.com/python/python_lists.htm</a>.</p>
+        <br>
+        <h3 id="lesson3">Your challenge: Create your own Python List methods.</h3>
+        <ol>
+            <li>Join my CoderPad joint session at <a href="https://coderpad.io/4CMTA7YP" target="_blank">https://coderpad.io/4CMTA7YP</a>.</li>
+            <li>Chose one of the incomplete methods to complete yourself, with a partner, or with a team.</li>
+            <li>On your local machine, come up with at least one way to implement this method. Don't use .append(), .extend(), insert(), or .reverse() in your code. For an extra challenge, try coming up with three ways to implement one of the methods.</li>
+            <li>From your local code, chose your BEST implementation of the method. Copy/paste that method from your local machine to our shared CoderPad space.</li>
+            <li>Celebrate how awesome your new method is!</li>
+        </ol>
+        <img src="{{ url_for('static', filename='img/nap.gif') }}" id="gif">
+    {% endblock %}
+</div>
+{% endblock %}
