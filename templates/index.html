@@ -1,24 +1,59 @@
-{% extends "base.html" %}
+<html>
+<head>
+<style>       
+    img.jeff {
+        /* Set rules to fill background */
+        min-height: 100%;
+        min-width: 1024px;
+        
+        /* Set up proportionate scaling */
+        width: 100%;
+        height: auto;
+        
+        /* Set up positioning */
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    
+    @media screen and (max-width: 1024px){
+        img.bg {
+            left: 50%;
+            margin-left: -512px; }
+    }
+    
+    #page-wrap { position: relative; width: 80%; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+    p { font: 15px/2 Georgia, Serif; margin: 0 0 30px 0; text-indent: 40px; }
 
-{% block title %}Jeff Maxim{% endblock %}
+    .autoResizeImage {
+    max-width: 100%;
+    height: 50px;
+    width: auto;
+    }
 
-{% block page_content %}
-<div class="container">
-    <table>
-        <th valign="bottom" height="150px"><h1>Hi! I'm Jeff Maxim</h1></th>
-        <th valign="bottom" text-align="right" height="150px"><img src="{{ url_for('static', filename='img/jeff.jpg') }}"></th>
-    </table>
+</style>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/survey.css') }}">
+</head>
+<body> 
+<img class='jeff' src="{{ url_for('static', filename='img/' + i + '.jpg') }}" />
+<div id="page-wrap">
+    <div id='hi' >
+        <img width='200px' src="{{ url_for('static', filename='img/jeff.jpg') }}">
+    </div>
+    <div id='about'>
+        <h1>Hi! I'm Jeff Maxim</h1>
+        I'm a full stack web developer and instructor at <a href="http://www.byteacademy.co/" target="-blank">Byte Academy</a>. I'm a proud <a href="http://www.recurse.com" target="-blank">Recurse Center</a> alum. I've also taught for nine years in K-12 schools in New York City, Pennsylvania, and Florida in private, public, and charter schools. I currently teach <a href="http://cs50.wiki/This+is+CS50+AP" target="_blank">CS50AP</a> to NYC middle school students.
+    </div>
 </div>
-<div class="container" id="bio-and-pic">
-    <div id="bio">
-        <h3>About Me</h3>
-        <p>I'm a full stack web developer and instructor at <a href="http://www.byteacademy.co/" target="-blank">Byte Academy</a>. I'm a proud <a href="http://www.recurse.com" target="-blank">Recurse Center</a> alum. I've also taught for nine years in K-12 schools in New York City, Pennsylvania, and Florida in private, public, and charter schools. I currently teach <a href="http://cs50.wiki/This+is+CS50+AP" target="_blank">CS50AP</a> to NYC middle school students.<p>
-        <h3>Big Things I've Made</h3>
-        <ul>
-            <li><a href="http://ec2-52-20-212-59.compute-1.amazonaws.com" target="-blank">Crispy Hippopotamus</a>: A browser based graphical user interface for xboard compatible chess engines, such as gnuchess. Lets you play against some of the world's best chess engines in your browser. <a href="https://github.com/jeffthemaximum/crispy-hippopotamus" target="_blank">Source code here</a>.</li>
-            <li><a href="http://jeffit.herokuapp.com/" target="-blank">Jeffit V2</a>: A Django, Python, JavaScript, HTML, CSS clone of <a href="https://www.reddit.com/" target="-blank">Reddit</a>. We use it at <a href="http://www.byteacademy.co/" target="-blank">Byte</a> for students and teachers. Look for the release of Jeffit V3 soon, which will include some huge upgrades. <a href="https://github.com/jeffthemaximum/jeffit_v2" target="_blank">Source code here</a>.</li>
-        </ul>
-        <h3>Medium projects</h3>
+<div id="page-wrap">
+    <h3>Big Things I've Made</h3>
+    <ul>
+        <li><a href="http://jeffit.herokuapp.com/" target="-blank">Jeffit V2</a>: A Django, Python, JavaScript, HTML, CSS clone of <a href="https://www.reddit.com/" target="-blank">Reddit</a>. We use it at <a href="http://www.byteacademy.co/" target="-blank">Byte</a> for students and teachers. Look for the release of Jeffit V3 soon, which will include some huge upgrades. <a href="https://github.com/jeffthemaximum/jeffit_v2" target="_blank">Source code here</a>.</li>
+        <li><a href="http://ec2-52-20-212-59.compute-1.amazonaws.com" target="-blank">Crispy Hippopotamus</a>: A browser based graphical user interface for xboard compatible chess engines, such as gnuchess. Lets you play against some of the world's best chess engines in your browser. <a href="https://github.com/jeffthemaximum/crispy-hippopotamus" target="_blank">Source code here</a>.</li>
+    </ul>
+</div>
+<div id="page-wrap">
+    <h3>Medium projects</h3>
         <ul>
             <li><a href="https://chrome.google.com/webstore/detail/push-to-classroom/jbneakgkpdfcjnolohhnbahjcbkleiji" target="-blank">Push to Classroom: </a>A Google Chrome extenstion that allows teachers to instantly share any link to their Google Classroom classes as an announcement or an assignment. <a href="https://github.com/jeffthemaximum/Push-To-Classroom" target="_blank">Source code here.</li>
             <li><a href="http://fast-woodland-8984.herokuapp.com/" target="-blank">Jeffit V1</a>: A Reddit clone written in Ruby on Rails that I used in my 6th grade Social Studies classroom. Students posted projects to Jeffit, then voted and commented on others' work. <a href="https://github.com/jeffthemaximum/Jeffit" target="_blank">Source code here</a>.</li>
@@ -28,41 +63,47 @@
             <li><a href="http://www.nycdessertmap.com/" target="-blank">NYC Dessert Map</a>: Uses Google Maps api and some fun front-end code to plot a curated list of NYC's best dessert spots. <a href="https://github.com/jeffthemaximum/nycdessertmap" target="_blank">Source code here</a>.</li>
             <li><a href="https://4b2081ed9af3f130d4f86154118a65b8efa78b6d-www.googledrive.com/host/0B1hOpXvXDFo2b1phVUIyZ2tKZXc/" target="-blank">Bitcoin Investment Calculator</a>: Showcases Angular.js and D3.js. This app details how much you could potentially profit if you invested X amount of dollars in Bitcoins, and shows a D3 linear graph of historical bitcoin prices. Mainly built so that I could experiment with Angular.js and D3.js.<a href="https://github.com/jeffthemaximum/bitcoin-calculator" target="_blank">Source code here</a>.</li>
         </ul>
-        <h3>Blogs and littler projects</h3>
-        <ul>
-            <li><a href="https://obscure-atoll-2224.herokuapp.com/">Recurse Center Blog</a>: A Ruby on Rails blog that documents my learning and experiences at Recurse Center. <a href="https://github.com/jeffthemaximum/octropress-blog" target="_blank">Source code here.</li>
-            <li><a href="http://www.cs50apnyc.com">AP Computer Science Class Website</a>: WordPress blog where I write about current issues in EdTech.</li>
-            <li><a href="http://www.mrmaxim.org">5th/6th Grade Class Website</a>: Google Site that I used to communicate curriculum to students, teachers, and administrators while working as a public school teacher in NYC.</li>
-        </ul>
-        <h3>Some other key details</h3>
-        <ul>
-            <li>Email: <a href="mailto:frey.maxim@gmail.com">frey.maxim@gmail.com</a></li>
-            <li>Swarthmore College 2007. Education, Psychology, Pre-Med.</li>
-            <li>University of Pennsylvania 2011. Masters in Reading, Writing, and Literacy Education.</li>
-            <li>I live in NYC with my beautiful wife, <a href="http://emilyelizabethcooksandstuff.blogspot.com/" target="_blank">Emily</a>.</li>
-        </ul>
-        <h3>Click one of the buttons below to learn more</h3>
-        <div class="socialMediaTable">
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <a href="https://www.facebook.com/frey.maxim" target="_blank"><img class="autoResizeImage" src="http://i.stack.imgur.com/4iiKJ.png"/></a>
-                        </td>
-                        <td>
-                            <a href="https://twitter.com/jeffthemaximum" targert="_blank"><img class="autoResizeImage" src="http://www.uwosh.edu/ruralschools/images/Twitter-Logo.png"/></a>
-                        </td>
-                        <td>
-                            <a href="https://www.linkedin.com/in/jeffmaxim" target="_blank"><img class="autoResizeImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png"/></a>
-                        </td>
-                        <td>
-                            <a href="https://github.com/jeffthemaximum" target="_blank"><img class="autoResizeImage" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"/></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+</div>
+<div id="page-wrap">
+    <h3>Blogs and littler projects</h3>
+    <ul>
+        <li><a href="https://obscure-atoll-2224.herokuapp.com/">Recurse Center Blog</a>: A Ruby on Rails blog that documents my learning and experiences at Recurse Center. <a href="https://github.com/jeffthemaximum/octropress-blog" target="_blank">Source code here.</li>
+        <li><a href="http://www.cs50apnyc.com">AP Computer Science Class Website</a>: WordPress blog where I write about current issues in EdTech.</li>
+        <li><a href="http://www.mrmaxim.org">5th/6th Grade Class Website</a>: Google Site that I used to communicate curriculum to students, teachers, and administrators while working as a public school teacher in NYC.</li>
+    </ul>
+</div>
+<div id="page-wrap">
+    <h3>Some other key details</h3>
+    <ul>
+        <li>Email: <a href="mailto:frey.maxim@gmail.com">frey.maxim@gmail.com</a></li>
+        <li>Swarthmore College 2007. Education, Psychology, Pre-Med.</li>
+        <li>University of Pennsylvania 2011. Masters in Reading, Writing, and Literacy Education.</li>
+        <li>I live in NYC with my beautiful wife, <a href="http://emilyelizabethcooksandstuff.blogspot.com/" target="_blank">Emily</a>.</li>
+    </ul>
+</div>
+<div id="page-wrap">
+<h3>Click one of the buttons below to learn more</h3>
+    <div class="socialMediaTable">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="https://www.facebook.com/frey.maxim" target="_blank"><img class="autoResizeImage" src="http://i.stack.imgur.com/4iiKJ.png"/></a>
+                    </td>
+                    <td>
+                        <a href="https://twitter.com/jeffthemaximum" targert="_blank"><img class="autoResizeImage" src="http://www.dieuxdelaviron.com/images/Twitter256.png"/></a>
+                    </td>
+                    <td>
+                        <a href="https://www.linkedin.com/in/jeffmaxim" target="_blank"><img class="autoResizeImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png"/></a>
+                    </td>
+                    <td>
+                        <a href="https://github.com/jeffthemaximum" target="_blank"><img class="autoResizeImage" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"/></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
+</body> 
 
-{% endblock %}
+</html>

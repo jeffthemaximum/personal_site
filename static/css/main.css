@@ -6980,3 +6980,15 @@ div#pic{
     width: auto;
 }
 
+div#about {
+  display: inline-block;
+  max-width: 500px;
+  margin: 5px;
+}
+
+div#hi {
+  display: inline-block;
+  max-width: 300px;
+  margin: 5px;
+}
+

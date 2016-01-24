@@ -11,7 +11,8 @@ bootstrap = Bootstrap(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    i = str(randint(1,6))
+    return render_template('index.html', i=i)
 
 
 @app.route('/byte')
