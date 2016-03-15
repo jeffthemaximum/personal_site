@@ -1,27 +1,27 @@
 <html>
 <head>
-<style>       
+<style>
     img.jeff {
         /* Set rules to fill background */
         min-height: 100%;
         min-width: 1024px;
-        
+
         /* Set up proportionate scaling */
         width: 100%;
         height: auto;
-        
+
         /* Set up positioning */
         position: fixed;
         top: 0;
         left: 0;
     }
-    
+
     @media screen and (max-width: 1024px){
         img.bg {
             left: 50%;
             margin-left: -512px; }
     }
-    
+
     #page-wrap { position: relative; width: 80%; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
     p { font: 15px/2 Georgia, Serif; margin: 0 0 30px 0; text-indent: 40px; }
 
@@ -34,7 +34,7 @@
 </style>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/survey.css') }}">
 </head>
-<body> 
+<body>
 <img class='jeff' src="{{ url_for('static', filename='img/' + i + '.jpg') }}" />
 <div id="page-wrap">
     <div id='hi' >
@@ -49,6 +49,7 @@
     <h3>Big Things I've Made</h3>
     <ul>
         <li><a href="http://jeffit.herokuapp.com/" target="-blank">Jeffit V2</a>: A Django, Python, JavaScript, HTML, CSS clone of <a href="https://www.reddit.com/" target="-blank">Reddit</a>. We use it at <a href="http://www.byteacademy.co/" target="-blank">Byte</a> for students and teachers. Look for the release of Jeffit V3 soon, which will include some huge upgrades. <a href="https://github.com/jeffthemaximum/jeffit_v2" target="_blank">Source code here</a>.</li>
+        <li><b>OK Investments:</b> Web app that does sentiment analysis of news articles and generates stock recommendations. Uses Django, python, numpy, pandas, redis, celery, textblob, D3.js, IBM Watson API, Javascript, jQuery, AJAX,  CSS, HTML. Uses custom algorithms to analyze stock sentiment over time. Not live yet. <a href="https://github.com/jeffthemaximum/stock-predictor" target="_blank">Source code here</a>.</li>
         <li><a href="http://ec2-52-20-212-59.compute-1.amazonaws.com" target="-blank">Crispy Hippopotamus</a>: A browser based graphical user interface for xboard compatible chess engines, such as gnuchess. Lets you play against some of the world's best chess engines in your browser. <a href="https://github.com/jeffthemaximum/crispy-hippopotamus" target="_blank">Source code here</a>.</li>
     </ul>
 </div>
@@ -104,6 +105,6 @@
         </table>
     </div>
 </div>
-</body> 
+</body>
 
 </html>
