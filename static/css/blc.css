@@ -9,6 +9,10 @@
 .header {
     background-color: #A0CD58;
 }
+
+.content {
+    background-color: #48A85D;
+}
     
 a {
     color: #FF5420;
@@ -20,4 +24,9 @@ a {
 
 .collapsible-header {
     padding: 0;
+}
+
+h4 {
+    margin: 0;
+    padding: 1.14rem;
 }
