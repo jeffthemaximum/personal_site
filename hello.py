@@ -11,7 +11,7 @@ bootstrap = Bootstrap(app)
 
 @app.route('/')
 def index():
-    i = str(randint(1,6))
+    i = str(randint(1, 6))
     return render_template('index.html', i=i)
 
 
@@ -22,8 +22,14 @@ def byte():
 
 @app.route('/survey')
 def survey():
-    i = str(randint(1,6))
+    i = str(randint(1, 6))
     return render_template('survey.html', i=i)
+
+
+@app.route('/blc')
+def blc():
+    i = str(randint(1, 6))
+    return render_template('blc.html', i=i)
 
 
 if __name__ == '__main__':
