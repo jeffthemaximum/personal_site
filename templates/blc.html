@@ -33,8 +33,10 @@ html {
         <h4 class="centered">With <a href="/"><b>Jeff Maxim</b></a> and <a href="http://www.inwoodacademy.org"><b>Inwood Academy</b></a></h4>
       </div>
     </div>
-    
+
+    <!-- accordion -->
     <div class="row mvg">
+
       <div class="col s7">
         <ul class="collapsible popout" data-collapsible="accordion">
 
@@ -57,15 +59,93 @@ html {
             </div>
             <div class="collapsible-body header">
               <div class="col s12">
-                <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc15.jpg') }}">
+                <p>
+                  <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc15.jpg') }}">
+                </p>
               </div>
               <br>
               <p>
-                Jeff Maxim started teaching CS50AP at Inwood Academy in Fall 2015. At that time, he taught the course to 12 high school students and one exceptional middle school student. Students made it through units 
+                Jeff Maxim started teaching CS50AP at Inwood Academy in Fall 2015. At that time, he taught the course to 12 high school students and one exceptional middle school student. Students made it through <a href="http://cs50apnyc.com/unit-0/">unit 0</a> and <a href="http://cs50apnyc.com/unit-1-building-blocks-of-programming/">unit 1</a> during this time.
+              </p>
+              <p>
+                As the semester progressed, more and more middle school students expressed interest to Jeff Maxim about also learning about computer science through CS50. Because of this, 8 more middle school students began taking the CS50AP class at Inwood Academy.
+              </p>
+              <p>
+                In January, 2016, Jeff Maxim left his position at Inwood Academy, where he had worked for the previous 3.5 years. He nows works as a web developer at <a href="https://experiment.com/">Experiment</a>.
+              </p>
+              <p>
+                Jeff continued to teach CS50AP at Inwood Academy in Spring 2016 as a volunteer. He only taught the course to the 9 middle school students during Spring 2016. None of the high school students at Inwood Academy continued to take the course.
               </p>
             </div>
           </li>
+
+          <!-- Successes -->
+          <li class="header">
+            <div class="collapsible-header header">
+              <i class="material-icons">filter_drama</i>CS50AP Successes
+            </div>
+            <div class="collapsible-body header">
+              <h4 class="centered">
+                <a href="https://inwoodacademyblog.org/2016/02/10/harvard-universitys-cs50/">NYC Hackathon</a>
+              </h4>
+              <div class="col s12">
+                <p>
+                  <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc16.jpg') }}">
+                </p>
+              </div>
+              <p>
+                Harvard and Microsoft hosted a CS50AP hackathon at Browning School in NYC in 2016. 3 middle school students from Inwood Academy attended this event and had an awesome time. They met students from throughtout the Northeast who were also taking CS50AP. The met David Malan, Zamyla, and others from the CS50 team. Meeting David and Zamyla felt like meeting celebrities for these students!
+              </p>
+              <h4 class="centered">
+                Visitors
+              </h4>
+              <p>
+                <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc21.jpg') }}">
+              </p>
+              <p>
+                Jeff has some cool programming friends from <a href="https://experiment.com/">Experiment</a>, where he works, <a href="https://www.recurse.com/">Recurse Center</a>, and <a href="http://keybase.io/">Keybase</a>. Jeff had some of these friends visit CS50AP class in Inwood Academy whenever he could. This helped the students in the class meet professional programmers. Jeff liked that his students got to meet programmers who weren't just nerdy white guys like him. This was also fun for Jeff's programmer friends, as they got to work with excited CS students. 
+              </p>
+          </li>
           
+          <!-- Challenges -->
+          <li class="header">
+            <div class="collapsible-header header">
+              <i class="material-icons">filter_drama</i>CS50AP Challenges
+            </div>
+            <div class="collapsible-body header">
+              <h4 class="centered">
+                "Why do I need to learn programming. I'm gonna be a rapper."
+              </h4>
+              <p>
+                <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc23.jpg') }}">
+              </p>
+              <p>
+                That's a real quote from 'curtis', who you see on the right on the picture above. Few students at IAL had much experience with computer science before CS50AP with Jeff Maxim, and even fewer had first had relationships with professional programmers. Jeff sometimes found it hard to convince Inwood Academy students that computer science is fun and opens doors.
+              </p>
+              <h4 class="centered">
+                Jeff quit
+              </h4>
+              <p>
+                Jeff quit his job at Inwood Academy in January 2016. He now works at <a href="https://www.experiment.com">Experiment</a> as a web developer.
+              </p>
+              <p>
+                In spring 2016, after Jeff left his teaching position at Inwood Academy, he continued to come teach CS50AP at Inwood Academy as a volunteer. Jeff went to Inwood Academy 1-3 times per week to teach CS50AP in spring 2016.
+              </p>
+              <p>
+                This was challenging, for a few reasons. First, since Jeff was no longer a paid teacher at Inwood Academy, he sometimes found it more challenging to motivate himself to go teach the course at Inwood Academy. Second, Jeff usually taught the course about once per week in the Spring, and this meant the students had much less time with the curriculum.
+              </p>
+
+              <h4 class="centered">
+                Limited computer usage
+              </h4>
+              <p>
+                <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc22.jpg') }}">
+              </p>
+              <p>
+                That's a real picture of the screen that 'protects' the available student computers at Inwood Academy. For unknown reason, administrators at Inwood Academy have a lot of restrictions on students' computer usage while at school. It's difficult for students and teachers to find computers to use with students for this reason. Super restrictive web filters block a lot of content for students; <a href="https://c9.io/">Cloud 9</a> is even blocked there.
+              </p>
+          </li>
+
           <!-- class website -->
           <li class="header">
             <div class="collapsible-header header">
@@ -128,12 +208,25 @@ html {
                 <div class="col s6">
                   <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc14.jpg') }}">
                 </div>
+                <div class="col s6">
+                  <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc17.jpg') }}">
+                </div>
+                <div class="col s6">
+                  <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc18.jpg') }}">
+                </div>
+                <div class="col s6">
+                  <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc19.jpg') }}">
+                </div>
+                <div class="col s6">
+                  <img class="responsive-img materialboxed" src="{{ url_for('static', filename='img/blc20.jpg') }}">
+                </div>
               </div>
             </div>
           </li>
         </ul>
       </div>
-    </div>
+    </div> <!-- end accordiong -->
+
   </div>
   
 </body>

@@ -13,3 +13,11 @@
 a {
     color: #FF5420;
 }
+
+.collapsible-body p {
+    padding: 1rem;
+}
+
+.collapsible-header {
+    padding: 0;
+}
