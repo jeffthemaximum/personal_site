@@ -19,6 +19,10 @@ def index():
 def byte():
     return render_template('byte.html')
 
+@app.route('/flatiron')
+def flatiron():
+    return render_template('flatiron.html')
+
 
 @app.route('/survey')
 def survey():

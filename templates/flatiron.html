@@ -1,0 +1,156 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Byte Academy{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/boot.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table>
+        <th valign="bottom" height="150px"><h1>Hi! I'm Jeff Maxim</h1></th>
+        <th valign="bottom" text-align="right" height="150px"><img src="{{ url_for('static', filename='img/jeff.jpg') }}"></th>
+    </table>
+    <br>
+    <p>I'm a full stack web developer at <a href="https://experiment.com/" target="-blank">Experiment.com</a> and a full stack instructor at <a href="http://www.byteacademy.co/" target="-blank">Byte Academy</a>. 
+    I'm a proud <a href="http://www.recurse.com" target="-blank">Recurse Center</a> never-graduate. 
+    I've also taught for nine years in K-12 schools in New York City, Pennsylvania, and Florida in private, public, and charter schools. 
+    I most recently taught <a href="http://cs50.wiki/This+is+CS50+AP" target="_blank">CS50AP</a> to NYC middle school students at <a href="http://www.inwoodacademy.org/" target="_blank">Inwood Academy</a>.
+    Check out more about me <a href="/" target="-blank">here</a>.
+    <p>
+</div>
+<div class="container">
+    {% block page_content %}
+        <h3>tl;dr of today's lesson</h3>
+        <p><b>What we're going learn/review: </b>Our goal for today is to learn more about Ruby Array methods like .push(), .concat(), .insert(), and .reverse().</p>
+        <p><b>What you're going to do: </b>Your challenge for today is to chose one of those four methods and write your own version of that method!</p>
+        <p><b>Why we're going to go it: </b>"Dig deep" is an approach to learning programming that encourages the learner to understand the intracate details of how a programming language, idea, method, etc. works. (I learned about it from my friend <a href="http://maryrosecook.com/" target="_blank">Mary Rose Cook</a>). Understanding the deep details of a concept makes you better at remembering that concept and using it in the future.</b></p>
+        <p>Table of contents:</p>
+        <ul>
+            <li>Review of Ruby Arrays</li>
+            <ul>
+                <li><a href="#lesson1">
+                    How to create an Array and access elements within the Array.
+                </a></li>
+                <li><a href="#lesson2">
+                    How Ruby Array methods like .push(), .concat(), .insert(), and .reverse() work.
+                </a></li>
+            </ul>
+            <li>Your challenge for today</li>
+            <ul>
+                <li><p style="color:red">SKIP RIGHT HERE IF YOU JUST WANT TO GET STARTED ON THE CHALLENGE ---> <a href="#lesson3">
+                    Creating your own Ruby Array methods can help you to "dig deep" into how these methods work.
+                </a></p></li>
+            </ul>
+        </ul>
+        <h3 id="lesson1">Create a Ruby Array</h3>
+        <p>You just need to provide the name of the Array and initialize it with values. Following is an example of initializing an Array with Ruby:</p>
+        <pre><code>
+> my_array = ["The", "earth", "revolves", "around", "sun"]
+=> ["The", "earth", "revolves", "around", "sun"]
+        </code></pre>
+        <br>
+        <h3>Accessing elements in an Array</h3>
+        <p>Arrays in Ruby are zero indexed. This means, you can access individual elements in an array by the order the appear in the Array. Here is an example:</p>
+        <pre><code>
+> my_array[0]
+=> 'The'
+> my_array[4]
+=> 'sun'
+        </code></pre>
+        <p>Arrays cannot be accessed beyond the rightmost index boundary. Ruby handles this fairly 'gracefully' by returning nil, where other languages, such as Python, might return an error. Here is an example:</p>
+        <pre><code>
+> my_array[15]
+=> nil
+        </code></pre>
+        <p>If you try to access values at a negative index then values from the rightmost index can be accessed backwards. Here is an example:</p>
+        <pre><code>
+> my_array[-1]
+=> 'sun'
+        </code></pre>
+        <p>The above sections, "Create a Ruby Array", and "Accessing items in an Array" borrow heavily from 
+          <a href="http://www.thegeekstuff.com/2013/06/python-list/" target="_blank">http://www.thegeekstuff.com/2013/06/python-list/</a> 
+          and <a href="https://ruby-doc.org/core-2.4.0/Array.html" target="_blank">https://ruby-doc.org/core-2.4.0/Array.html</a>.
+        </p>
+        <br>
+        <h3 id="lesson2">Array methods</h3>
+        <p>Below is a list of some of the methods that Ruby includes for arrays</p>
+        <h5>array.push(obj, ...)</h5>
+        <p>The method <b>push()</b> pushes (or appends) passed object(s) into the existing array. Here is an example:</p>
+        <pre><code>
+> my_array.push("today")
+=> ["The", "earth", "revolves", "around", "sun", "today"]
+> my_array.push("today")
+=> ["The", "earth", "revolves", "around", "sun", "today", ["because", "of", "gravity"]]
+        </code></pre>
+        <h5>array.concat(other_array1, ...)</h5>
+        <p>The method <b>concat()</b> appends the contents of an other array to the original array. Here is an example:</p>
+        <pre><code>
+> my_array = ["The", "earth", "revolves", "around", "sun"]
+> my_array.concat(["today", "because", "of", "gravity"])
+=> ["The", "earth", "revolves", "around", "sun", "today", "because", "of", "gravity"]
+        </code></pre>
+        <p>*Bonus thought question #1: Why did I reinitialize my_array to equalling ["The", "earth", "revolves", "around", "sun"] ?</p>
+        <h5>array.insert(index, obj...)</h5>
+        <p>The method <b>insert()</b> inserts the given values before the index position.</p>
+        <pre><code>
+> my_array = ["The", "earth", "revolves", "around", "sun"]
+> my_array.insert(4, "the")
+=> ["The", "earth", "revolves", "around", "the", "sun"]
+> my_array.insert(1, "big", "blue")
+=> ["The", "big", "blue", "earth", "revolves", "around", "the", "sun"]
+        </code></pre>
+        <h5>array.reverse()</h5>
+        <p>The method <b>reverse()</b> reverses objects of list in place.</p>
+        <pre><code>
+> my_array = ["The", "earth", "revolves", "around", "sun"]
+=> ["sun", "around", "revolves", "earth", "The"]
+        </code></pre>
+        <p>The above section, "List methods", borrows from 
+          <a href="http://www.tutorialspoint.com/python/python_lists.htm" target="_blank">http://www.tutorialspoint.com/python/python_lists.htm</a>
+          and <a href="https://ruby-doc.org/core-2.4.0/Array.html" target="_blank">https://ruby-doc.org/core-2.4.0/Array.html</a>.</p>
+        <br>
+        <h3 id="lesson3">Your challenge: Create your own Ruby array methods.</h3>
+        <ol>
+            <li>Join my CoderPad joint session at <a href="https://coderpad.io/Y7DGXRPD" target="_blank">https://coderpad.io/Y7DGXRPD</a>.</li>
+            <li>Chose one of the incomplete methods to complete yourself, with a partner, or with a team.</li>
+            <li>On your local machine, come up with at least one way to implement this method. Don't use .push(), .concat(), .insert(), and .reverse() in your code. For an extra challenge, try coming up with three ways to implement one of the methods.</li>
+            <li>From your local code, chose your BEST implementation of the method. Copy/paste that method from your local machine to our shared CoderPad space.</li>
+            <li>Celebrate how awesome your new method is!</li>
+        </ol>
+        <img src="{{ url_for('static', filename='img/nap.gif') }}" id="gif">
+        <br>
+        <br>
+        <br>
+        <h5>Ohai! You're still there?</h5> 
+        <p>You must be the type of student who's up for some extra challenges. Read on to learn more about Ruby Array methods...</p>
+        <ol>
+            <li>This isn't really how Ruby Array methods are implemented under-the-hood. 
+              Ruby scripts are commonly interpreted by CRuby to ruby C code, which is written in the C programming language. 
+              You can read more about <a href="https://www.toptal.com/ruby/the-many-shades-of-the-ruby-programming-language" target="_blank">
+              Ruby interpreters here</a>. 
+              If you want to dig even deeper, <a href="https://github.com/ruby/ruby" target="_blank">you can checkout the full Ruby source code, 
+              written in C, here</a>. 
+              If you want to dig even another level deeper, <a href="https://github.com/ruby/ruby/blob/trunk/array.c" target="_blank">
+              here's the Ruby source code for Array implementation is here</a>.</li>
+            <li>To actually change the functionality of the Ruby Array class, you'd have to use Ruby Classes and Objects. 
+              This approach would involve adding methods to the Array class. 
+              There's a good summary of this approach. 
+              <a href="http://rubylearning.com/satishtalim/ruby_open_classes.html" target="_blank">
+              You can check out here</a>. If today's challenge seemed easy for you, try to do what's suggested in that post. 
+              That is, try to open up the Array class and then try to add some methods in that class.</li>
+            <li>Checkout the following code:
+                 <pre><code>
+> a = [1, 2, 3, 4, 5]
+> b = a
+> a.push(6)
+                </code></pre>
+                What do you think b is equal to here? Test it out for yourself. What happens? Why?</li>
+        </ol>
+        <br>
+        <h4>Did I just make your day? Ruin it? Let me know! <a href="mailto:frey.maxim@gmail.com">Jeff Maxim</a> <h4>
+    {% endblock %}
+</div>
+{% endblock %}
