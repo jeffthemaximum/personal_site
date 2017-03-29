@@ -1,19 +1,51 @@
-def push_to_array(original_array, new_item)
+my_array = ["The", "earth", "revolves", "around", "sun"]
+
+
+def concat_array(original_array, other_array)
+  # who wants to try to implement this?
+  # the challenge is to implement it without using
+  # the .push(), .concat(), .insert(), and .reverse()
+  # built-in methods!
+end
+
+
+def insert_at_position(index, original_list)
+  # who wants to try to implement this?
+  # the challenge is to implement it without using
+  # the .push(), .concat(), .insert(), and .reverse()
+  # built-in methods!
+end
+
+
+def reverse_list(original_list)
+  # who wants to try to implement this?
+  # the challenge is to implement it without using
+  # the .push(), .concat(), .insert(), and .reverse()
+  # built-in methods!
+end
+
+
+# Below are my examples for 3 different ways to implement the .push()
+# method. You can see how I've implemented .push(), and try to use my 
+# strategies. Try to come up with three ways to implement your method.
+
+
+def push_to_array_jeff(original_array, new_item)
   # I think this is my best
 
   # make new_array that's one item longer than original
   original_length = original_array.length
   new_array = [nil] * (original_length + 1)
-  # add all original items to new_list
+  # add all original items to new_array
   original_array.each_with_index do |val, idx|
     new_array[idx] = val
   end  
-  # make new_item the last element of new_list
+  # make new_item the last element of new_array
   new_array[original_length] = new_item
   return new_array
 end
 
-def push_to_array2(original_array, new_item)
+def push_to_array_jeff2(original_array, new_item)
   # will this one work all the time? why or why not?
   # hint here: http://ruby-doc.org/core-2.4.0/Hash.html
 
@@ -23,23 +55,25 @@ def push_to_array2(original_array, new_item)
   original_array.each_with_index do |val, idx|
     my_hash[val] = idx
   end
-  # add new item to dictionary
+  # add new item to hash
   my_hash[new_item] = original_length
-  # return just the keys from the dictionary as a list
+  # return just the keys from the hash as an array
   return my_hash.keys
 end
 
 
-def push_to_array3(original_list, new_item)
+def push_to_array_jeff3(original_array, new_item)
   # This one is probably the cleanest, most memory efficient,
   # and fastest. Do you agree?
-  # But I still like def push_to_array better
+  # But I still like def push_to_array_jeff better
   # what about you?
-  length = original_list.length
-  original_list[length] = new_item
-  return original_list
+  length = original_array.length
+  original_array[length] = new_item
+  return original_array
 end
 
-my_array = ["The", "earth", "revolves", "around", "sun"]
 
-puts push_to_array3(my_array, "today")
+puts my_array
+puts push_to_array_jeff(my_array, "jeff")
+puts push_to_array_jeff(my_array, ["maxim", "is", "cool"])
+# add a print statement down here to test your code
